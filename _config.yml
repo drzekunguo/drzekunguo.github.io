@@ -23,32 +23,32 @@ author:
   # Biographic information
   avatar           : "profile.jpg"
   name             : "Dr Zekun Guo"
-  pronouns         : # example: "she/her"  
-  bio              : "Lecturer and Graduate Research Director at DAIM, University of Hull"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  pronouns         : "he/him"  
+  bio              : "Lecturer and Graduate Research Director at DAIM"
+  location         : "Hull, United Kingdom"
+  employer         : "University of Hull"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "Z.Guo2@hull.ac.uk" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+  googlescholar    : "https://scholar.google.com/citations?user=xGCYwH8AAAAJ&hl=zh-CN"
   impactstory      : # URL
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            : "https://orcid.org/0000-0001-6894-847X"
   semantic         : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  researchgate     : # URL
+  pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  researchgate     : "https://www.researchgate.net/profile/Zekun-Guo-2"
 
   # Repositories and software development
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "academicpages"
+  github           : "https://github.com/drzekunguo"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
+  bluesky          : # "bsky.app" # Replace this with you Bluesky username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
