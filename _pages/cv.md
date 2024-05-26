@@ -11,36 +11,36 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* PGCert. in Academic Practice, University of Hull, 2025 (expected)
+* Ph.D in Electronic and Electrical Engineering, Brunel University London, 2023
+* M.Res. in Energy Systems, University of Edinburgh, 2019
+* B.Eng. in Energy and Environment System Engineering, Shandong University, 2018
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* May 2024: Graduate Research Director
+  * Data Science, Artificial Intelligence, and Modelling (DAIM) Centre, University of Hull
+  * Duties includes: Develop postgraduate policies and training, oversee PGR applications, investigate student cases, guide supervision, maintain supervisor lists, and issue warnings to postgraduate researchers, enhancing the postgraduate experience in line with the University's mission.
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* May 2024: Early Career Researcher (ECR) Representitive - Communication Officer
+  * Supergen Offshore Renewable Energy (ORE) Hub
+  * Duties included: Seek collaborative research opportunities via LinkedIn and other media, and engage ECRs in Supergen ORE Hub events.
 
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* November 2023: Lecturer in Electrical Engineering
+  * Data Science, Artificial Intelligence, and Modelling (DAIM) Centre, University of Hull
+  * Duties included: Teaching, Research, Citizenship. 
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Artificial Intelligence and Machine Learning
+  * Deep Reinforcement Learning
+  * Multi-agent Large Language Model Applications
+* Energy System and Electrical Engineering
+  * Stochastic Optimisation in Renewable Energy Applications
+  * Optimisation and Modeling of Power Systems
+  * Simulation Tools: DIgSILENT PowerFactory, Simulink
 
+<!--
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
