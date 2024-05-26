@@ -11,4 +11,4 @@ Dr. Zekun Guo is a Lecturer at the Centre of Excellence for Data Science, Artifi
 
 In 2024, Dr. Guo took on the role of Supergen ORE ECR Committee Communication Officer. He specialises in the development and design of artificial intelligence-based control and estimation methods to enhance the energy efficiency of renewable energy systems, particularly in offshore wind and wave energy conversion.
 
-For more information, please visit: <a href="https://www.hull.ac.uk/staff-directory/zekun-guo">.
+For more information, please visit: <a href="https://www.hull.ac.uk/staff-directory/zekun-guo">University Staff Webpage.
