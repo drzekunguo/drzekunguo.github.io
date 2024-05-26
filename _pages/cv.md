@@ -40,6 +40,15 @@ Skills
   * Optimisation and Modeling of Power Systems
   * Simulation Tools: DIgSILENT PowerFactory, Simulink
 
+Awards and Achievements
+======
+2022.09    Top 10 of English Platform in AeroTube 2022 China (held by Royal Aeronautical Society, RAeS)
+2021.11    The First Place of English Platform in AeroTube 2021 China held by the RAeS
+
+Professional Titles and Engagements
+======
+* IEEE Member, and Member of IEEE Young Professionals
+* Royal Aeronautical Society Affiliate
 <!--
 Publications
 ======
