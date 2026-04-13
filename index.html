@@ -1,396 +1,717 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zekun Guo</title>
+    <meta name="description" content="Dr Zekun Guo - Lecturer in AI for Engineering, University of Hull">
 
-<head data-brackets-id='6070'>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-    <!-- Font Awesome and Academicons (optional) -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-          crossorigin="anonymous">
-    <link rel="stylesheet"
-          href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --bg-mint: #f0fdf9;
+            --bg-card: #ffffff;
+            --text-primary: #111827;
+            --text-secondary: #6b7280;
+            --text-tertiary: #9ca3af;
+            --accent: #24a676;
+            --accent-soft: rgba(36,166,118,0.08);
+            --accent-medium: rgba(36,166,118,0.15);
+            --border: #f0f0f0;
+            --border-hover: #e0e0e0;
+            --radius: 16px;
+            --radius-sm: 10px;
+            --sidebar-w: 300px;
+            --nav-h: 52px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-    <!-- Custom styling -->
-    <style type="text/css">
-        a {
-            color: #1772d1;
-            text-decoration: none;
+        [data-theme="dark"] {
+            --bg-primary: #0c0d12;
+            --bg-secondary: #12131a;
+            --bg-mint: #0e1a16;
+            --bg-card: #16171f;
+            --text-primary: #f0f0f0;
+            --text-secondary: #a0a0a8;
+            --text-tertiary: #6b6b75;
+            --accent: #34d399;
+            --accent-soft: rgba(52,211,153,0.08);
+            --accent-medium: rgba(52,211,153,0.12);
+            --border: #1e1f2a;
+            --border-hover: #2a2b38;
         }
-        a:focus, a:hover {
-            color: #f09227;
-            text-decoration: none;
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 14.5px;
+            line-height: 1.65;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+            transition: background var(--transition), color var(--transition);
+            -webkit-font-smoothing: antialiased;
         }
-        body, td, th {
-            font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
-            font-size: 15px;
+
+        a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+        a:hover { opacity: 0.8; }
+
+        /* ── Navbar ── */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0;
+            height: var(--nav-h);
+            background: rgba(255,255,255,0.72);
+            backdrop-filter: saturate(180%) blur(16px);
+            -webkit-backdrop-filter: saturate(180%) blur(16px);
+            z-index: 100;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 28px;
+            border-bottom: 1px solid var(--border);
+            transition: background var(--transition), border-color var(--transition);
         }
-        heading {
-            font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
-            font-size: 16px;
-            font-weight: 700;
+        [data-theme="dark"] .nav { background: rgba(12,13,18,0.78); }
+
+        .nav-brand { font-weight: 700; font-size: 15px; color: var(--text-primary); letter-spacing: -0.3px; }
+        .nav-right { display: flex; align-items: center; gap: 6px; }
+        .nav-links { display: flex; list-style: none; gap: 2px; }
+        .nav-links a {
+            font-size: 13px; font-weight: 500; color: var(--text-secondary);
+            padding: 6px 12px; border-radius: 8px; transition: all 0.15s;
         }
-        strong {
-            font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
-            font-size: 15px;
+        .nav-links a:hover { background: var(--accent-soft); color: var(--accent); opacity: 1; }
+
+        .theme-btn {
+            width: 34px; height: 34px; border-radius: 10px; border: 1px solid var(--border);
+            background: var(--bg-card); cursor: pointer; font-size: 14px;
+            display: grid; place-items: center; color: var(--text-secondary);
+            transition: all 0.15s; margin-left: 8px;
         }
-        strongred {
-            font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
-            color: red;
-            font-size: 16px;
+        .theme-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+
+        .mobile-btn { display: none; width: 34px; height: 34px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg-card); cursor: pointer; font-size: 16px; color: var(--text-secondary); }
+
+        /* ── Layout ── */
+        .wrap {
+            display: flex; min-height: 100vh; padding-top: var(--nav-h);
         }
-        sectionheading {
-            font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
-            font-size: 19px;
-            font-weight: 700;
+
+        /* ── Sidebar ── */
+        .side {
+            position: fixed; top: var(--nav-h); left: 0;
+            width: var(--sidebar-w); height: calc(100vh - var(--nav-h));
+            padding: 40px 28px 28px; overflow-y: auto;
+            display: flex; flex-direction: column; align-items: center; text-align: center;
+            background: var(--bg-primary);
+            border-right: 1px solid var(--border);
+            transition: background var(--transition), border-color var(--transition);
         }
-        #teaser-td {
-            text-align: center;
-            margin: auto;
-            display: block;
+
+        .avatar {
+            width: 160px; height: 160px; border-radius: 50%; object-fit: cover;
+            border: 3px solid var(--bg-secondary);
+            box-shadow: 0 0 0 3px var(--accent-medium), 0 8px 32px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
         }
-        #teaser {
-            width: 160px;
-            border-style: none;
+
+        .side h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 4px; }
+        .side .role { font-size: 12.5px; font-weight: 500; color: var(--accent); margin-bottom: 2px; }
+        .side .org { font-size: 12.5px; color: var(--text-tertiary); margin-bottom: 16px; }
+        .side .email { font-size: 12px; color: var(--text-tertiary); margin-bottom: 20px; }
+
+        .icons { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 24px; }
+        .icons a {
+            width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center;
+            background: var(--bg-secondary); color: var(--text-tertiary); font-size: 15px;
+            transition: all 0.2s; border: 1px solid transparent;
         }
-        .circular {
-            width: 230px;
-            height: 230px;
-            border-radius: 350px;
-            -webkit-border-radius: 350px;
-            -moz-border-radius: 350px;
-            /* Replace with your own portrait if desired */
-            background:  url(./imgs/New-Square.jpg) no-repeat;
-            background-size: 100% auto;
+        .icons a:hover { background: var(--accent-soft); color: var(--accent); border-color: var(--accent-medium); transform: translateY(-1px); opacity: 1; }
+
+        /* Sidebar visitor map placeholder */
+        .visitor-widget {
+            padding-top: 12px; width: 100%;
+            font-size: 11px; color: var(--text-tertiary);
         }
-        .circular img {
-            opacity: 0;
-            filter: alpha(opacity=0);
+
+        /* ── Main ── */
+        .main {
+            margin-left: var(--sidebar-w); flex: 1;
+            padding: 40px 48px 80px; max-width: 820px;
+        }
+
+        /* ── Sections ── */
+        .sec {
+            margin-bottom: 40px;
+            opacity: 0; transform: translateY(10px);
+            transition: opacity 0.45s ease, transform 0.45s ease;
+        }
+        .sec.visible { opacity: 1; transform: translateY(0); }
+
+        .sec-title {
+            font-size: 16px; font-weight: 600; letter-spacing: -0.2px;
+            margin-bottom: 18px; padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent); display: inline-block;
+        }
+
+        /* ── About ── */
+        .bio { font-size: 14px; line-height: 1.75; color: var(--text-secondary); }
+        .bio p + p { margin-top: 12px; }
+        .bio strong { color: var(--text-primary); font-weight: 600; }
+        .bio em { font-style: italic; }
+
+        /* ── Education ── */
+        .edu-list { display: flex; flex-direction: column; gap: 0; }
+
+        .edu-item {
+            display: flex; align-items: flex-start; gap: 16px;
+            padding: 16px 0; position: relative;
+        }
+        .edu-item + .edu-item { border-top: 1px solid var(--border); }
+
+        .edu-logo {
+            width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0;
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            display: grid; place-items: center; overflow: hidden;
+            transition: border-color 0.2s;
+        }
+        .edu-logo img { width: 100%; height: 100%; object-fit: cover; }
+        .edu-item:hover .edu-logo { border-color: var(--accent-medium); }
+
+        .edu-info { flex: 1; }
+        .edu-info h3 { font-size: 14px; font-weight: 600; line-height: 1.3; margin-bottom: 2px; }
+        .edu-info .degree { font-size: 13px; color: var(--text-secondary); }
+        .edu-info .period { font-size: 12px; color: var(--text-tertiary); margin-top: 2px; }
+
+        /* ── Experience (Timeline) ── */
+        .timeline { position: relative; padding-left: 60px; }
+
+        .timeline::before {
+            content: ''; position: absolute; left: 23px; top: 8px; bottom: 8px; width: 2px;
+            background: linear-gradient(to bottom, var(--accent), var(--accent-medium), transparent);
+            border-radius: 2px;
+        }
+
+        .tl-item { position: relative; padding-bottom: 28px; }
+        .tl-item:last-child { padding-bottom: 0; }
+
+        .tl-logo {
+            position: absolute; left: -60px; top: 0;
+            width: 44px; height: 44px; border-radius: 12px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            display: grid; place-items: center; overflow: hidden; z-index: 1;
+        }
+        .tl-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+        .tl-item h3 { font-size: 14px; font-weight: 600; line-height: 1.3; margin-bottom: 2px; }
+        .tl-item .tl-org { font-size: 13px; color: var(--accent); font-weight: 500; }
+        .tl-item .tl-meta { font-size: 12px; color: var(--text-tertiary); margin-top: 1px; }
+        .tl-item .tl-detail { font-size: 12.5px; color: var(--text-secondary); line-height: 1.6; margin-top: 4px; }
+        .tl-item .tl-date { font-size: 12px; color: var(--text-tertiary); margin-top: 2px; }
+        .tl-item .tl-links { margin-top: 6px; }
+
+        /* LinkedIn-style sub-roles */
+        .tl-subroles { margin-top: 12px; padding-left: 0; border-left: 2px solid var(--border); margin-left: 0; }
+        .tl-sub {
+            padding: 10px 0 10px 16px; position: relative;
+        }
+        .tl-sub + .tl-sub { border-top: 1px solid var(--border); }
+        .tl-sub::before {
+            content: ''; position: absolute; left: -5px; top: 16px;
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--bg-primary); border: 2px solid var(--accent);
+        }
+        .tl-sub h4 { font-size: 13.5px; font-weight: 600; line-height: 1.3; margin-bottom: 1px; }
+        .tl-sub .tl-meta { font-size: 11.5px; }
+        .tl-sub .tl-detail { font-size: 12px; margin-top: 3px; }
+
+        /* Affiliation card inside timeline */
+        .tl-affiliation {
+            display: flex; align-items: center; gap: 10px;
+            margin-top: 8px; padding: 8px 12px;
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 10px; font-size: 12px;
+        }
+        .tl-affiliation img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; }
+        .tl-affiliation .aff-info { flex: 1; }
+        .tl-affiliation .aff-name { font-weight: 600; font-size: 12.5px; color: var(--text-primary); }
+        .tl-affiliation .aff-desc { font-size: 11.5px; color: var(--text-tertiary); }
+
+        /* Teaching module cards */
+        .teach-module {
+            padding: 14px 16px; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-sm); margin-bottom: 8px; transition: border-color 0.15s;
+        }
+        .teach-module:hover { border-color: var(--accent-medium); }
+        .teach-module h4 {
+            font-size: 13.5px; font-weight: 600; margin-bottom: 4px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .teach-module h4::before {
+            content: ''; width: 6px; height: 6px; border-radius: 50%;
+            background: var(--accent); flex-shrink: 0;
+        }
+        .teach-module .module-desc { font-size: 12.5px; color: var(--text-secondary); line-height: 1.55; padding-left: 14px; }
+
+        /* ── Interest Tags ── */
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+        .tag {
+            font-size: 12px; font-weight: 500; padding: 5px 14px;
+            border-radius: 100px; color: var(--accent);
+            background: var(--accent-soft); border: 1px solid var(--accent-medium);
+        }
+
+        .note { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+
+        /* ── Cards (Projects / Talks) ── */
+        .card {
+            display: flex; gap: 18px; padding: 18px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); margin-bottom: 12px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .card:hover { border-color: var(--border-hover); box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+        [data-theme="dark"] .card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.2); }
+
+        .card-img {
+            width: 180px; flex-shrink: 0; border-radius: var(--radius-sm);
+            object-fit: cover; aspect-ratio: 4/3; background: var(--bg-secondary);
+        }
+
+        .card-body { flex: 1; min-width: 0; }
+        .card-body h3 { font-size: 14px; font-weight: 600; line-height: 1.35; margin-bottom: 6px; }
+        .card-body .meta { font-size: 12.5px; color: var(--text-secondary); line-height: 1.55; }
+        .card-body .meta b { color: var(--text-primary); font-weight: 600; }
+
+        /* ── Publications ── */
+        .pub {
+            display: flex; gap: 18px; padding: 18px; margin-bottom: 12px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            border-radius: 2px var(--radius) var(--radius) 2px;
+            transition: box-shadow 0.2s;
+        }
+        .pub:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+        [data-theme="dark"] .pub:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.2); }
+
+        .pub-img {
+            width: 140px; flex-shrink: 0; border-radius: var(--radius-sm);
+            object-fit: contain; background: var(--bg-secondary);
+        }
+
+        .pub-body { flex: 1; min-width: 0; }
+        .pub-body h3 { font-size: 14px; font-weight: 600; line-height: 1.35; margin-bottom: 4px; }
+        .pub-body .venue { font-size: 12px; color: var(--text-tertiary); font-style: italic; margin-bottom: 6px; }
+        .pub-body .desc { font-size: 12.5px; color: var(--text-secondary); line-height: 1.55; margin-bottom: 8px; }
+
+        .links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .links a {
+            font-size: 12px; font-weight: 500; padding: 3px 12px;
+            border-radius: 6px; border: 1px solid var(--accent-medium); color: var(--accent);
+            transition: background 0.15s;
+        }
+        .links a:hover { background: var(--accent-soft); opacity: 1; }
+
+        /* ── Teaching ── */
+        .teach-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+        .teach-list li {
+            padding: 10px 14px; font-size: 13px; font-weight: 500;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-sm); transition: border-color 0.15s;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .teach-list li:hover { border-color: var(--accent-medium); }
+        .teach-list li::before {
+            content: ''; width: 6px; height: 6px; border-radius: 50%;
+            background: var(--accent); flex-shrink: 0;
+        }
+        .teach-note { font-size: 13px; color: var(--text-secondary); margin-bottom: 10px; }
+
+        /* ── Footer ── */
+        .footer {
+            margin-left: var(--sidebar-w); padding: 20px 48px;
+            border-top: 1px solid var(--border);
+            font-size: 11.5px; color: var(--text-tertiary); text-align: center;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 1080px) {
+            .side { position: static; width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 28px 20px; }
+            .main { margin-left: 0; padding: 28px 20px 60px; max-width: 100%; }
+            .footer { margin-left: 0; padding: 20px; }
+            .wrap { flex-direction: column; }
+            .nav-links { display: none; }
+            .mobile-btn { display: grid; place-items: center; }
+            .nav-links.open {
+                display: flex; flex-direction: column; position: absolute;
+                top: var(--nav-h); left: 0; right: 0;
+                background: var(--bg-primary); border-bottom: 1px solid var(--border);
+                padding: 12px 20px; gap: 4px;
+            }
+        }
+        @media (max-width: 640px) {
+            .avatar { width: 120px; height: 120px; }
+            .side h1 { font-size: 20px; }
+            .card, .pub { flex-direction: column; }
+            .card-img, .pub-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
         }
     </style>
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
-          rel="stylesheet" type="text/css">
-    <title>Zekun Guo</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-
-    <script async src="./js/analytics.js"></script>
-    <script type="text/javascript" src="./js/hidebib.js"></script>
-    <meta name="Dr Zekun Guo's Homepage" http-equiv="Content-Type" content="website for Dr Guo">
-
-    <script type="text/javascript" src="./js/scramble.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic"
-          rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <!--Summary / Intro-->
-    <table width="850" border="0" align="center" cellspacing="0" cellpadding="20">
-        <tr>
-            <td>
-                <table id="intro" width="100%" align="center" border="0" cellpadding="10">
-                    <tr>
-                        <!-- Main Text Section -->
-                        <td width="67%" valign="middle">
-                            <p align="center">
-                                <font size="7">Zekun Guo</font>
-                            </p>
-                            <p align="justify">
-                                <b>Lecturer in AI for Engineering, University of Hull | Founder of Energentic AI | Seconded Researcher at the University of Birmingham | RAEng Global Talent Awardee | Autonomous LLM Agents </b><br><br>
-                                Welcome to my personal website!<br><br>
-                                I am a Lecturer at the Centre of Excellence for Data Science, Artificial Intelligence, and Modelling (DAIM) at
-                                <a target="_blank" href="https://www.hull.ac.uk/staff-directory/zekun-guo">University of Hull</a>, 
-                                serving as Postgraduate Research Director. 
-                                I earned my PhD from <i>Brunel University of London</i> in September 2023. I also hold an MRes in Energy Systems (2019) from
-                                <i>The University of Edinburgh</i> and a BEng in Energy and Environmental System Engineering (2018) from <i>Shandong University</i>.
-                                <br><br>
-                                I am leading the <a target="_blank" href="https://www.hull.ac.uk/study/postgraduate/taught/artificial-intelligence-for-engineering-msc">MSc Artificial Intelligence for Engineering variant programme</a>. 
-                                As part of this programme, I developed its core module, AI-Driven Optimisation and Control, integrating cutting-edge AI technologies into engineering practices to solve real-world industrial challenges.<br><br>
-                                I am leading the <a target="_blank" href="https://energentic.github.io">AI x Energy Systems research group</a> and the commercial project <a target="_blank" href="https://www.energentic.ai">Energentic AI</a>, a platform pioneering modular Agent-as-a-Service solutions for forecasting, optimisation, and control in energy systems. Our mission is to empower developers and energy companies with intuitive, AI-enhanced tools that streamline real-time decision-making, improve system transparency, and enable scalable automation.<br><br>
-                            </p>
-                            <br>
-                            <!-- Social / Contact Icons -->
-                            <p class="paragraph-ch" align="center">
-                                <!-- Example links: fill in with your actual profiles -->
-                                <a href="https://www.linkedin.com/in/zekun-guo-a428b3198/" class="btn-icon" target="_blank" title="LinkedIn">
-                                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;
-                                </a>
-                                <a href="https://x.com/Zek_Guo" class="btn-icon" target="_blank" title="Twitter">
-                                    <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
-                                </a>
-                                <a href="https://scholar.google.com/citations?user=xGCYwH8AAAAJ&hl=zh-CN" class="btn-icon" target="_blank" title="Google Scholar">
-                                    <i class="ai ai-google-scholar fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;
-                                </a>
-                                <a href="https://github.com/drzekunguo" class="btn-icon" target="_blank" title="GitHub">
-                                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;
-                                </a>
-                                <a href="https://orcid.org/my-orcid?orcid=0000-0001-6894-847X" target="_blank" title="ORCID">
-                                    <i class="ai ai-orcid fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;
-                                </a>
-                                <a href="mailto:Z.Guo2@hull.ac.uk" class="btn-icon" target="_blank" title="Work Email">
-                                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;
-                                </a>
-                            </p>
-                        </td>
-                        
-                        <!-- Portrait Section -->
-                        <td width="20%">
-                            <br><br>
-                            <div class="circular">
-                                <!-- Provide your own portrait in place of the background in .circular CSS, 
-                                     or uncomment an <img> if you prefer direct image usage -->
-                                <img width="100%" src="imgs/New-Square.jpg" alt="ZekunGuoPhoto">
+    <!-- Nav -->
+    <nav class="nav">
+        <a href="#" class="nav-brand">Zekun Guo</a>
+        <div class="nav-right">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#talks">Talks</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+            </ul>
+            <button class="theme-btn" id="themeToggle" aria-label="Theme"><span id="themeIcon">&#9789;</span></button>
+            <button class="mobile-btn" id="mobileBtn" aria-label="Menu">&#9776;</button>
+        </div>
+    </nav>
+
+    <!-- Layout -->
+    <div class="wrap">
+        <!-- Sidebar -->
+        <aside class="side">
+            <img class="avatar" src="imgs/New-Square.jpg" alt="Zekun Guo">
+            <h1>Zekun Guo</h1>
+            <p class="role">Lecturer in AI for Engineering</p>
+            <p class="org">University of Hull</p>
+            <p class="email">Z.Guo2@hull.ac.uk</p>
+
+            <div class="icons">
+                <a href="https://www.linkedin.com/in/zekun-guo-a428b3198/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/Zek_Guo" target="_blank" title="X"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://scholar.google.com/citations?user=xGCYwH8AAAAJ&hl=zh-CN" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+                <a href="https://github.com/drzekunguo" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:Z.Guo2@hull.ac.uk" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+
+            <div class="visitor-widget">
+                <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=gKHKGsMrJwvJXebF7bWOABRHSgt2q-2EwRC6HwmfmhA&cl=a7d7c5&w=220&t=tt&co=f9fafb&ct=111827&cmo=1e8f66&cmn=f59e0b"></script>
+            </div>
+        </aside>
+
+        <!-- Main -->
+        <main class="main">
+
+            <!-- About -->
+            <section class="sec" id="about">
+                <h2 class="sec-title">About Me</h2>
+                <div class="bio">
+                    <p><strong>Founder of Energentic AI &middot; Seconded Researcher at the University of Birmingham &middot; RAEng Global Talent Awardee</strong></p>
+                    <p>I am a Lecturer at the Centre of Excellence for Data Science, Artificial Intelligence, and Modelling (DAIM) at <a target="_blank" href="https://www.hull.ac.uk/staff-directory/zekun-guo">University of Hull</a>.</p>
+                    <p>I am leading the <a target="_blank" href="https://www.hull.ac.uk/study/postgraduate/taught/artificial-intelligence-for-engineering-msc">MSc AI for Engineering programme</a> and developed its core module, AI for Optimal Control, integrating cutting-edge AI into engineering practices.</p>
+                    <p>I lead the <a target="_blank" href="https://energentic.github.io">AI x Energy Systems research group</a> and the commercial project <a target="_blank" href="https://www.energentic.ai">Energentic AI</a>, a platform pioneering modular Agent-as-a-Service solutions for forecasting, optimisation, and control in energy systems.</p>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section class="sec" id="experience">
+                <h2 class="sec-title">Experience</h2>
+                <div class="timeline">
+                    <!-- University of Hull -->
+                    <div class="tl-item">
+                        <div class="tl-logo"><img src="imgs/icons/UoH.png" alt="Hull"></div>
+                        <h3>University of Hull</h3>
+                        <p class="tl-meta">Nov 2023 &ndash; Present</p>
+
+                        <div class="tl-subroles">
+                            <div class="tl-sub">
+                                <h4>Lecturer (Assistant Professor) in AI and Data Science</h4>
+                                <p class="tl-meta">Full-time &middot; Nov 2023 &ndash; Present</p>
+                                <p class="tl-detail">Centre of Excellence for Data Science, Artificial Intelligence, and Modelling (DAIM). Developed the core module AI for Optimal Control for the MSc AI for Engineering variant programme.</p>
+                                <div class="tl-affiliation">
+                                    <img src="imgs/icons/DAIM Building.jpeg" alt="DAIM">
+                                    <div class="aff-info">
+                                        <p class="aff-name"><a target="_blank" href="https://www.hull.ac.uk/research/centres/centre-of-excellence-for-data-science-artificial-intelligence-and-modelling">DAIM Centre</a></p>
+                                        <p class="aff-desc">Data Science, Artificial Intelligence and Modelling Centre</p>
+                                    </div>
+                                </div>
                             </div>
-                        </td>
-                    </tr>
-                </table>
-                <br>
+                            <div class="tl-sub">
+                                <h4>Member of DAIM Management Team</h4>
+                                <p class="tl-meta">Full-time &middot; May 2024 &ndash; Present</p>
+                                <p class="tl-detail">Responsible for overseeing daily operations and contributing to strategic decision-making. Ensures effective cross-departmental communication and supports the delivery of high-quality education and research.</p>
+                            </div>
+                            <div class="tl-sub">
+                                <h4>Postgraduate Research Director for DAIM</h4>
+                                <p class="tl-meta">Part-time &middot; May 2024 &ndash; Jul 2025</p>
+                                <p class="tl-detail">Liaises with the Faculty PGR management and Doctoral College, oversees PGR applications, investigates student cases, and enhances the postgraduate research experience.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                <!-- Research areas / Teaching / Publications, etc. -->
-                <hr>
-                <table id="headingResearch" width="120%" align="center" border="0" cellspacing="0" cellpadding="20">
-                    <tr>
-                        <td><font size="5">Research Interests</font></td>
-                    </tr>
-                </table>
-                <table id="intro" width="100%" align="center" border="0" cellpadding="0">
-                    <tr>
-                        <td width="100%" valign="top">
-                            <p align="justify">
-                                <ul>
-                                    <li><b>Transportation Electrification</b>
-                                    <li><b>Power System Stability and Resilience</b>
-                                    <li><b>Artificial Intelligence Applications in Electrical Engineering</b>
-                                    <li><b>Artificial Intelligence Driven Control for Offshore Renewable Energy</b>
-                                    <li><b>Large Language Model (LLM) Multi Agent System</b>
-                                </ul>
-                            </p>
-                            <p align="justify">
-                            If you are interested in conducting research with me, please visit this <a target="_blank" href="https://docs.google.com/document/d/18h3DhsAO89oo1O2sl_iCglSX7B8yVn1LtnlQUcIVLM4/edit?usp=sharing">Google Doc link</a>, where I will share some topics I am interested in pursuing. 
-                            Feel free to reach out to me with a message like, "<b><i>Hi, I am interested in [topic name], let's collaborate!</i></b>".
-                            For undergraduate and postgraduate students, it is never too early to reach out. You will have the opportunity to work on meaningful research projects with us, co-author publications, and enhance your employability and increasing your chances of securing a PhD studentship.
-                            </p>
-                        </td>
-                    </tr>
-                </table>
-                
-                <br>
+                    <!-- Energentic AI -->
+                    <div class="tl-item">
+                        <div class="tl-logo"><img src="imgs/icons/Energentic.png" alt="Energentic"></div>
+                        <h3>Founder &amp; Entrepreneurial Lead</h3>
+                        <p class="tl-org">Energentic AI</p>
+                        <p class="tl-meta">2024 &ndash; Present</p>
+                        <p class="tl-detail">AI-driven agentic energy management platform pioneering modular Agent-as-a-Service solutions for forecasting, optimisation, and control in energy systems. Innovate UK ICURe programme for commercialisation.</p>
+                        <div class="tl-links links">
+                            <a target="_blank" href="https://www.energentic.ai">Landing Page</a>
+                        </div>
+                    </div>
 
-                <hr>
+                    <!-- University of Birmingham -->
+                    <div class="tl-item">
+                        <div class="tl-logo"><img src="imgs/icons/university_of_birmingham_logo.jpg" alt="Birmingham"></div>
+                        <h3>Seconded Researcher</h3>
+                        <p class="tl-org">University of Birmingham</p>
+                        <p class="tl-meta">2025</p>
+                        <p class="tl-detail">Birmingham Energy Institute. Modelling hydrogen and electric demand at airports for UK decarbonised aviation.</p>
+                    </div>
+                </div>
+            </section>
 
-                <table id="headingfunding" width="120%" align="center" border="0" cellspacing="0" cellpadding="20">
-                    <tr><td>
-                          <font size="5">Funded Projects</font>
-                    </td></tr>
-                </table>
+            <!-- Education -->
+            <section class="sec" id="education">
+                <h2 class="sec-title">Education</h2>
+                <div class="edu-list">
+                    <div class="edu-item">
+                        <div class="edu-logo"><img src="imgs/icons/Brunel.jpg" alt="Brunel"></div>
+                        <div class="edu-info">
+                            <h3>Brunel University of London</h3>
+                            <p class="degree">PhD in Electronics and Electrical Engineering</p>
+                            <p class="period">2019 &ndash; 2023</p>
+                        </div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-logo"><img src="imgs/icons/Edinburgh.jpg" alt="Edinburgh"></div>
+                        <div class="edu-info">
+                            <h3>The University of Edinburgh</h3>
+                            <p class="degree">MRes in Energy Systems</p>
+                            <p class="period">2018 &ndash; 2019</p>
+                        </div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-logo"><img src="imgs/icons/Shandong University.jpg" alt="SDU"></div>
+                        <div class="edu-info">
+                            <h3>Shandong University</h3>
+                            <p class="degree">BEng in Energy and Environmental System Engineering</p>
+                            <p class="period">2014 &ndash; 2018</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                <table id="IGNITE" width="100%" align="center" border="0" cellpadding="20">
+            <!-- Research Interests -->
+            <section class="sec" id="research">
+                <h2 class="sec-title">Research Interests</h2>
+                <div class="tags">
+                    <span class="tag">Transportation Electrification</span>
+                    <span class="tag">Power System Stability &amp; Resilience</span>
+                    <span class="tag">AI in Electrical Engineering</span>
+                    <span class="tag">AI-Driven Offshore Renewable Energy</span>
+                    <span class="tag">LLM Multi-Agent Systems</span>
+                </div>
+                <p class="note">
+                    Interested in collaborating? Visit my <a target="_blank" href="https://docs.google.com/document/d/18h3DhsAO89oo1O2sl_iCglSX7B8yVn1LtnlQUcIVLM4/edit?usp=sharing">research topics</a> and reach out: <strong><em>"Hi, I am interested in [topic], let's collaborate!"</em></strong>
+                </p>
+            </section>
 
-                    <tr id="piggyback"><td width="40%" valign="middle">
-                           <img src="./imgs/IGNITE.jpg"  width="100%" style="border-style: none">
-                        </td>
-          
-                        <td width="60%" valign="top" style="margin-top: -10px;">
-                          <p style="font-size: 6px;"><br>
-                          <p><heading data-brackets-id='6135'> Net-Zero Emissions Aviation: Developing Hydrogen Energy Infrastructure at Airports</heading></a><br>
-                              <b>Funder: IGNITE Network+ Flexible Fund</b><br> Grant: ~£60,000, March 2025 - March 2026<br>
-                              Project Leads: <b><i>Dr Zekun Guo (University of Hull)</i></b>, Dr Tongtong Zhang (University of Birmingham), Dr Yihuai Zhang (University of Glasgow)<br>
-                              <a target="_blank" href="https://www.ignitenetplus.ac.uk/view/items/id/1529/funded_project-net-zero-emissions-aviation-developing-hydrogen-energy-infrastructure-at-airports">Learn More</a>
-                            </p>
-                      </td>
-                  </tr>
-                </table>
-                <table id="HIACT" width="100%" align="center" border="0" cellpadding="20">
+            <!-- Selected Publications -->
+            <section class="sec" id="publications">
+                <h2 class="sec-title">Selected Publications</h2>
 
-                    <tr id="piggyback"><td width="40%" valign="middle">
-                            <img src="./imgs/HIACT.png"  width="100%" style="border-style: none">
-                        </td>
-          
-                        <td width="60%" valign="top" style="margin-top: -10px;">
-                          <p><heading data-brackets-id='6135'> Modelling Hydrogen and Electric Demand at Airports for UK Decarbonised Aviation</heading></a><br>
-                              <b>Funder: HI-ACT Flexible Fund</b><br> Grant: £10,835, Mar 2025 - June 2025<br>
-                              Project Lead: <b><i>Dr Zekun Guo (University of Hull)</i></b><br> Secondment Host: Prof Sara Walker, Birmingham Energy Institute, University of Birmingham.<br>
-                              <a target="_blank" href="https://hi-act.ac.uk/hi-act-secondments/">Learn More</a>
-                            </p>
-                        </td>
-                  </tr>
-                </table>
-                <table id="Innovate UK ICURe" width="100%" align="center" border="0" cellpadding="20">
+                <div class="pub">
+                    <div class="pub-body">
+                        <h3>Beyond Rule-Based Workflows: An Information-Flow-Orchestrated Multi-Agents Paradigm via Agent-to-Agent Communication</h3>
+                        <p class="venue">arXiv:2601.09883, 2026</p>
+                        <p class="desc">An information-flow-orchestrated paradigm with a dedicated orchestrator coordinating agents via A2A; on GAIA it achieves 63.64% pass@1 accuracy, outperforming OWL by 8.49 points.</p>
+                        <div class="links">
+                            <a target="_blank" href="https://arxiv.org/abs/2601.09883">arXiv</a>
+                            <a target="_blank" href="https://github.com/Coral-Protocol/Beyond-Rule-Based-Workflows">GitHub</a>
+                        </div>
+                    </div>
+                </div>
 
-                    <tr id="piggyback"><td width="40%" valign="middle">
-                           <img src="./imgs/ICURe.png"  width="100%" style="border-style: none">
-                        </td>
-                        <td width="60%" valign="top" style="margin-top: -10px;">
-                          <p><heading data-brackets-id='6135'> Energentic: AI-Driven Agentic Energy Management for Battery Storage Systems</heading></a><br>
-                              <b>Funder</b>: Innovate UK & UKRI TMF<br> 
-                              <b>Grant (Discover)</b>: £2,500, June 2025 - August 2025<br>
-                              <b>Grant (Explore)</b>: £40,000, September 2025 – Dec 2025<br>
-                              <b>Grant (Exploit)</b>: £15,000, Dec 2025 – Mar 2026<br>
-                              <b>Entrepreneurial Lead</b>: <b><i>Dr Zekun Guo (University of Hull)</i></b><br> Technology Transfer Officer (TTO): Snehal Kadam<br>
-                              <a target="_blank" href="https://iuk-business-connect.org.uk/opportunities/icure-explore/">Learn More</a>
-                            </p>
-                        </td>
-                  </tr>
-                </table>
+                <div class="pub">
+                    <div class="pub-body">
+                        <h3>Can Large Language Model Agents Balance Energy Systems?</h3>
+                        <p class="venue">arXiv:2502.10557, 2025</p>
+                        <p class="desc">We integrate LLMs with a multi-scenario SUC framework to improve efficiency and reliability under high wind uncertainties. The approach cuts costs and load curtailment.</p>
+                        <div class="links">
+                            <a target="_blank" href="https://arxiv.org/abs/2502.10557">arXiv</a>
+                            <a target="_blank" href="https://github.com/drzekunguo/LLM_Agent_Power_System_Balance">GitHub</a>
+                        </div>
+                    </div>
+                </div>
 
-                <hr>
+                <div class="pub">
+                    <div class="pub-body">
+                        <h3>SimuGen: Multi-modal Agentic Framework for Constructing Block Diagram-Based Simulation Models</h3>
+                        <p class="venue">arXiv:2506.15695, 2025</p>
+                        <p class="desc">A multimodal agent framework that enables accurate and interpretable Simulink code generation by combining visual diagrams with domain-specific expertise.</p>
+                        <div class="links">
+                            <a target="_blank" href="https://arxiv.org/abs/2506.15695">arXiv</a>
+                            <a target="_blank" href="https://github.com/renxinxing123/SimuGen_beta">GitHub</a>
+                        </div>
+                    </div>
+                </div>
 
-                <!-- Selected Publications -->
-                <table id="headingPublications" width="120%" align="center" border="0" cellspacing="0" cellpadding="20">
-                    <tr>
-                        <td><font size="5">Selected Publications</font></td>
-                    </tr>
-                </table>
+                <div class="pub">
+                    <div class="pub-body">
+                        <h3>Anemoi: A Semi-Centralized Multi-agent Systems Based on Agent-to-Agent Communication MCP server from Coral Protocol</h3>
+                        <p class="venue">arXiv:2508.17068, 2025</p>
+                        <p class="desc">A semi-centralized multi-agent system enabling structured, real-time agent-to-agent collaboration; on GAIA it reaches 52.73% accuracy, surpassing OWL by +9.09%.</p>
+                        <div class="links">
+                            <a target="_blank" href="https://arxiv.org/abs/2508.17068">arXiv</a>
+                            <a target="_blank" href="https://github.com/Coral-Protocol/Anemoi">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                <table id="Journal" width="100%" align="center" border="0" cellpadding="20">
+            <!-- Funded Projects -->
+            <section class="sec" id="projects">
+                <h2 class="sec-title">Funded Projects</h2>
 
-                    <tr id="piggyback"><td width="40%" valign="top">
-                            <img src="./imgs/coral_workflow.png"  width="100%" style="border-style: none">
-                        </td>
-          
-                        <td width="60%" valign="top">
-                            <!-- <p style="font-size:6px"><br> -->
-                            <p><heading data-brackets-id='6135'> Beyond Rule-Based Workflows: An Information-Flow-Orchestrated Multi-Agents Paradigm via Agent-to-Agent Communication</heading></a><br>
-                                <i>arXiv:2601.09883</i>, 2026<br>
-                                An information-flow-orchestrated paradigm with a dedicated orchestrator coordinating agents via A2A; on GAIA it achieves 63.64% pass@1 accuracy, outperforming OWL by 8.49 points with comparable token consumption.<br>
-                                <a target="_blank" href="https://arxiv.org/abs/2601.09883">arXiv</a> &nbsp;&#183;&nbsp;<a target="_blank" href="https://github.com/Coral-Protocol/Beyond-Rule-Based-Workflows">GitHub</a>
-                            </p>
-                            </p>
-                        </td>
-                    </tr>
-                </table>
-
-                <table id="Journal" width="100%" align="center" border="0" cellpadding="20">
-
-                    <tr id="piggyback"><td width="40%" valign="top">
-                            <img src="./imgs/fig_framework.png"  width="100%" style="border-style: none">
-                        </td>
-          
-                        <td width="60%" valign="top">
-                            <!-- <p style="font-size:6px"><br> -->
-                            <p><heading data-brackets-id='6135'> Can Large Language Model Agents Balance Energy Systems?</heading></a><br>
-                                <i>arXiv:2502.10557</i>, 2025<br>
-                                We integrate LLMs with a multi-scenario SUC framework to improve efficiency and reliability under high wind uncertainties. Experiments show that the approach cuts costs and load curtailment.<br>
-                                <a target="_blank" href="https://arxiv.org/abs/2502.10557">arXiv</a> &nbsp;&#183;&nbsp;<a target="_blank" href="https://github.com/drzekunguo/LLM_Agent_Power_System_Balance">GitHub</a>
-                            </p>
-                            </p>
-                        </td>
-                    </tr>
-                </table>
-
-                <table id="Journal" width="100%" align="center" border="0" cellpadding="20">
-
-                    <tr id="piggyback"><td width="40%" valign="top">
-                            <img src="./imgs/Simugen_diagram.png"  width="100%" style="border-style: none">
-                        </td>
-          
-                        <td width="60%" valign="top">
-                            <!-- <p style="font-size:6px"><br> -->
-                            <p><heading data-brackets-id='6135'> SimuGen: Multi-modal Agentic Framework for Constructing Block
- Diagram-Based Simulation Models</heading></a><br>
-                                <i>arXiv:2506.15695</i>, 2025<br>
-                                We propose SimuGen, a multimodal agent framework that enables accurate and interpretable Simulink code generation by combining visual diagrams with domain-specific expertise.<br>
-                                <a target="_blank" href="https://arxiv.org/abs/2506.15695">arXiv</a> &nbsp;&#183;&nbsp;<a target="_blank" href="https://github.com/renxinxing123/SimuGen_beta">GitHub</a>
-                            </p>
-                            </p>
-                        </td>
-                    </tr>
-                </table>
-
-                <table id="Journal" width="100%" align="center" border="0" cellpadding="20">
-                    <tr id="piggyback">
-                        <td width="40%" valign="top">
-                        <img src="./imgs/Coral_Anemoi.png" width="100%" style="border-style: none">
-                        </td>
-
-                        <td width="60%" valign="top">
-                        <!-- <p style="font-size:6px"><br> -->
-                        <p>
-                            <heading> Anemoi: A Semi-Centralized Multi-agent Systems Based on Agent-to-Agent Communication MCP server from Coral Protocol</heading></a><br>
-                            <i>arXiv:2508.17068</i>, 2025<br>
-                            We present Anemoi, a semi-centralized multi-agent system built on Coral Protocol's A2A MCP server that enables structured, real-time agent-to-agent collaboration; on GAIA it reaches 52.73% accuracy with GPT-4.1-mini as the planner, surpassing the strongest open-source baseline OWL (43.63%) by +9.09% under identical LLM settings.<br>
-                            <a target="_blank" href="https://arxiv.org/abs/2508.17068">arXiv</a> &nbsp;&#183;&nbsp;<a target="_blank" href="https://github.com/Coral-Protocol/Anemoi">GitHub</a>
+                <div class="card">
+                    <img class="card-img" src="imgs/IGNITE.jpg" alt="">
+                    <div class="card-body">
+                        <h3>Net-Zero Emissions Aviation: Developing Hydrogen Energy Infrastructure at Airports</h3>
+                        <p class="meta">
+                            <b>IGNITE Network+ Flexible Fund</b> &middot; ~&pound;60,000<br>
+                            March 2025 &ndash; March 2026<br>
+                            Leads: <em>Dr Zekun Guo</em>, Dr Tongtong Zhang, Dr Yihuai Zhang<br>
+                            <a target="_blank" href="https://www.ignitenetplus.ac.uk/view/items/id/1529/funded_project-net-zero-emissions-aviation-developing-hydrogen-energy-infrastructure-at-airports">Learn More</a>
                         </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="card-img" src="imgs/HIACT.png" alt="">
+                    <div class="card-body">
+                        <h3>Modelling Hydrogen and Electric Demand at Airports for UK Decarbonised Aviation</h3>
+                        <p class="meta">
+                            <b>HI-ACT Flexible Fund</b> &middot; &pound;10,835<br>
+                            Mar 2025 &ndash; June 2025<br>
+                            Lead: <em>Dr Zekun Guo</em> &middot; Host: Prof Sara Walker, University of Birmingham<br>
+                            <a target="_blank" href="https://hi-act.ac.uk/hi-act-secondments/">Learn More</a>
                         </p>
-                        </td>
-                    </tr>
-                </table>
+                    </div>
+                </div>
 
+                <div class="card">
+                    <img class="card-img" src="imgs/ICURe.png" alt="">
+                    <div class="card-body">
+                        <h3>Energentic: AI-Driven Agentic Energy Management for Battery Storage Systems</h3>
+                        <p class="meta">
+                            <b>Innovate UK &amp; UKRI TMF</b><br>
+                            Discover: &pound;2,500 &middot; Explore: &pound;40,000 &middot; Exploit: &pound;15,000<br>
+                            June 2025 &ndash; Mar 2026<br>
+                            Lead: <em>Dr Zekun Guo</em> &middot; TTO: Snehal Kadam<br>
+                            <a target="_blank" href="https://iuk-business-connect.org.uk/opportunities/icure-explore/">Learn More</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
 
+            <!-- Talks -->
+            <section class="sec" id="talks">
+                <h2 class="sec-title">Tech Talks &amp; Blogs</h2>
 
+                <div class="card">
+                    <img class="card-img" src="Talks/Human-in-the-Loop.png" alt="">
+                    <div class="card-body">
+                        <h3>Bridging Minds and Machines: Agents with Human-in-the-Loop</h3>
+                        <p class="meta">
+                            Frontier Research, Real-World Impact, and Tomorrow's Possibilities<br>
+                            Xiaotian Jin, <b><em>Zekun Guo</em></b>, Puzhen Zhang, Shuo Lu, et al., 2025
+                        </p>
+                        <div class="links" style="margin-top: 8px;">
+                            <a target="_blank" href="https://www.camel-ai.org/blogs/human-in-the-loop-ai-camel-integration">Blog</a>
+                        </div>
+                    </div>
+                </div>
 
-                <hr>
+                <div class="card">
+                    <img class="card-img" src="Talks/Agentic.png" alt="">
+                    <div class="card-body">
+                        <h3>Agentic AI Energy Management: LLM-Enhanced Decision-Making in Battery Energy Systems</h3>
+                        <p class="meta">
+                            Rolling-Horizon Decision-Making for Energy Management<br>
+                            <b><em>Zekun Guo</em></b>, 2025 @SuperAIRE ECR Workshop, Sheffield
+                        </p>
+                        <div class="links" style="margin-top: 8px;">
+                            <a target="_blank" href="Talks/LLM-Rolling Energy Management.pdf">Slides</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                <!-- Talks and Blocks -->
-                <table id="headingTalks" width="120%" align="center" border="0" cellspacing="0" cellpadding="20">
-                    <tr>
-                        <td><font size="5">Tech Talks and Blogs</font></td>
-                    </tr>
-                </table>
+            <!-- Teaching -->
+            <section class="sec" id="teaching">
+                <h2 class="sec-title">Teaching</h2>
+                <p class="teach-note">MSc Data Science and Artificial Intelligence, postgraduate level:</p>
 
-                <table id="MultiAgent" width="100%" align="center" border="0" cellpadding="20">
+                <div class="teach-module">
+                    <h4>Applied Artificial Intelligence (Module 771767)</h4>
+                    <p class="module-desc">Builds on foundational AI concepts to prepare students for dissertation-level research. Topics include classification revisited, deep learning, applications to real-world problems, cognitive bias, and implications for equality.</p>
+                </div>
 
-                    <tr id="piggyback"><td width="40%" valign="top">
-                            <img src="./Talks/Human-in-the-Loop.png"  width="100%" style="border-style: none">
-                        </td>
-          
-                        <td width="60%" valign="top">
-                            <!-- <p style="font-size:6px"><br> -->
-                            <p><heading data-brackets-id='6135'> Bridging Minds and Machines: Agents with Human-in-the-Loop – Frontier Research, Real-World Impact, and Tomorrow’s Possibilities</heading></a><br>
-                                Bridging Human Expertise and AI Autonomy in Multi-Agent Systems
-                                Authors: Xiaotian Jin, <i><b>Zekun Guo</b></i>, Puzhen Zhang, Shuo Lu, Weisi Dai, Nujibieke, Lanping Guo, Wendong Fan, Guohao Li, 2025<br>
-                                <a target="_blank" href="https://www.camel-ai.org/blogs/human-in-the-loop-ai-camel-integration">Blog Link</a> &nbsp;
-                            </p>
-                            </p>
-                        </td>
-                    </tr>
-                </table>
+                <div class="teach-module">
+                    <h4>Research and Application in AI and Data Science (Module 771765)</h4>
+                    <p class="module-desc">A dual-theme module exploring how AI and Data Science apply to real-world contexts such as sustainability, healthcare, social responsibility, and the natural environment. Students develop their own research proposal to tackle a genuine research project, drawing from these experiences to identify questions and limitations.</p>
+                </div>
 
-                <table id="AgentEnergy" width="100%" align="center" border="0" cellpadding="20">
+                <div class="teach-module">
+                    <h4>AI and Data Science Research Project (Module 771764)</h4>
+                    <p class="module-desc">Students plan and work independently on a complex research-based problem, and report on the aims, methods, and outcomes of their scientific investigation.</p>
+                </div>
 
-                    <tr id="piggyback"><td width="40%" valign="top">
-                            <img src="./Talks/Agentic.png"  width="100%" style="border-style: none">
-                        </td>
-          
-                        <td width="60%" valign="top">
-                            <!-- <p style="font-size:6px"><br> -->
-                            <p><heading data-brackets-id='6135'> Agentic AI Energy Management: LLM-Enhanced 
-                                Decision-Making in Battery Energy Systems</heading></a><br>
-                                AI Agent for Energy Management through Rolling-Horizon Decision-Making<br>
-                                Presenter: <i><b>Zekun Guo</b></i>, 2025 @SuperAIRE ECR Workshop, Sheffield<br>
-                                <a target="_blank" href="./Talks/LLM-Rolling Energy Management.pdf">Slides</a> &nbsp;
-                            </p>
-                            </p>
-                        </td>
-                    </tr>
-                </table>
+                <p class="teach-note" style="margin-top: 16px;">MSc AI for Engineering variant programme (core module):</p>
 
+                <div class="teach-module">
+                    <h4>AI for Optimal Control (Module 772220) <a target="_blank" href="https://github.com/drzekunguo/AI-Driven-Optimisation-and-Control-Module-Docs">[GitHub]</a></h4>
+                    <p class="module-desc">Covers control methods, model predictive control, and deep reinforcement learning applications in engineering. Integrates cutting-edge AI technologies into engineering practices to solve real-world industrial challenges.</p>
+                </div>
+            </section>
 
-                <hr>
+        </main>
+    </div>
 
-                <!-- Teaching Section -->
-                <table id="headingTeaching" width="120%" align="center" border="0" cellspacing="0" cellpadding="20">
-                    <tr>
-                        <td><font size="5">Teaching</font></td>
-                    </tr>
-                </table>
-                <table id="intro" width="100%" align="center" border="0" cellpadding="20">
-                    <tr>
-                        <td width="100%" valign="top">
-                            <p align="justify">
-                                I teach or have taught the following modules for MSc Data Science and Artificial Intelligence at postgraduate levels:
-                                <ul>
-                                <li><b>Applied Artificial Intelligence (Module 771767)</b></li>
-                                <li><b>Research and Application in AI and Data Science （Module 771765）</b></li>
-                                <li><b>MSc Research Project (Module 771764)</b></li>
-                                </ul>
-                                I will also design and teach the core module of MSc Artificial Intelligence for Engineering variant programme:
-                                <ul>
-                                <li><b>Artificial Intelligence-driven Optimisation and Control (Module 772220)<a target="_blank" href="https://github.com/drzekunguo/AI-Driven-Optimisation-and-Control-Module-Docs">[GitHub Repository]</a></b></li>
-                                </ul>
-                            </p>
-                        </td>
-                    </tr>
-                </table>
+    <footer class="footer">&copy; 2025 Zekun Guo</footer>
 
+    <script>
+        // Theme
+        const toggle = document.getElementById('themeToggle');
+        const icon = document.getElementById('themeIcon');
+        const set = t => {
+            document.documentElement.setAttribute('data-theme', t);
+            icon.innerHTML = t === 'dark' ? '&#9788;' : '&#9789;';
+            localStorage.setItem('theme', t);
+        };
+        localStorage.removeItem('theme');
+        set('light');
+        toggle.onclick = () => set(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+
+        // Mobile menu
+        const btn = document.getElementById('mobileBtn');
+        const links = document.getElementById('navLinks');
+        btn.onclick = () => links.classList.toggle('open');
+        links.querySelectorAll('a').forEach(a => a.onclick = () => links.classList.remove('open'));
+
+        // Scroll reveal
+        const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.08 });
+        document.querySelectorAll('.sec').forEach(s => obs.observe(s));
+    </script>
+</body>
+</html>
