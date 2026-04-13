@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zekun Guo</title>
     <meta name="description" content="Dr Zekun Guo - Lecturer in AI for Engineering, University of Hull">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><polygon points='32,4 60,20 32,36 4,20' fill='%2324a676'/><polygon points='32,36 60,20 60,28 32,44 4,28 4,20' fill='%231e8f66'/><rect x='30' y='36' width='4' height='16' fill='%231e8f66'/><circle cx='32' cy='54' r='4' fill='%2324a676'/></svg>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -183,6 +184,7 @@
             transition: border-color 0.2s;
         }
         .edu-logo img { width: 100%; height: 100%; object-fit: cover; }
+        .edu-logo img[src$=".png"] { background: #fff; }
         .edu-item:hover .edu-logo { border-color: var(--accent-medium); }
 
         .edu-info { flex: 1; }
@@ -209,6 +211,7 @@
             display: grid; place-items: center; overflow: hidden; z-index: 1;
         }
         .tl-logo img { width: 100%; height: 100%; object-fit: cover; }
+        .tl-logo img[src$=".png"] { background: #fff; }
 
         .tl-item h3 { font-size: 14px; font-weight: 600; line-height: 1.3; margin-bottom: 2px; }
         .tl-item .tl-org { font-size: 13px; color: var(--accent); font-weight: 500; }
