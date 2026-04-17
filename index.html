@@ -285,7 +285,7 @@
 
         .card-img {
             width: 180px; flex-shrink: 0; border-radius: var(--radius-sm);
-            object-fit: cover; aspect-ratio: 4/3; background: var(--bg-secondary);
+            object-fit: contain; aspect-ratio: 4/3; background: #ffffff;
         }
 
         .card-body { flex: 1; min-width: 0; }
@@ -363,7 +363,8 @@
             .avatar { width: 120px; height: 120px; }
             .side h1 { font-size: 20px; }
             .card, .pub { flex-direction: column; }
-            .card-img, .pub-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+            .card-img { width: 100%; aspect-ratio: 16/9; object-fit: contain; }
+            .pub-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
         }
     </style>
 </head>
@@ -589,14 +590,15 @@
                 <h2 class="sec-title">Funded Projects</h2>
 
                 <div class="card">
-                    <img class="card-img" src="imgs/IGNITE.jpg" alt="">
+                    <img class="card-img" src="imgs/ICURe.png" alt="">
                     <div class="card-body">
-                        <h3>Net-Zero Emissions Aviation: Developing Hydrogen Energy Infrastructure at Airports</h3>
+                        <h3>Energentic: AI-Driven Agentic Energy Management for Battery Storage Systems</h3>
                         <p class="meta">
-                            <b>IGNITE Network+ Flexible Fund</b> &middot; ~&pound;60,000<br>
-                            March 2025 &ndash; March 2026<br>
-                            Leads: <em>Dr Zekun Guo</em>, Dr Tongtong Zhang, Dr Yihuai Zhang<br>
-                            <a target="_blank" href="https://www.ignitenetplus.ac.uk/view/items/id/1529/funded_project-net-zero-emissions-aviation-developing-hydrogen-energy-infrastructure-at-airports">Learn More</a>
+                            <b>Innovate UK &amp; UKRI TMF</b><br>
+                            Discover: &pound;2,500 &middot; Explore: &pound;40,000 &middot; Exploit: &pound;15,000<br>
+                            June 2025 &ndash; Mar 2026<br>
+                            Lead: <em>Dr Zekun Guo</em> &middot; TTO: Snehal Kadam<br>
+                            <a target="_blank" href="https://iuk-business-connect.org.uk/opportunities/icure-explore/">Learn More</a>
                         </p>
                     </div>
                 </div>
@@ -615,18 +617,18 @@
                 </div>
 
                 <div class="card">
-                    <img class="card-img" src="imgs/ICURe.png" alt="">
+                    <img class="card-img" src="imgs/IGNITE.jpg" alt="">
                     <div class="card-body">
-                        <h3>Energentic: AI-Driven Agentic Energy Management for Battery Storage Systems</h3>
+                        <h3>Net-Zero Emissions Aviation: Developing Hydrogen Energy Infrastructure at Airports</h3>
                         <p class="meta">
-                            <b>Innovate UK &amp; UKRI TMF</b><br>
-                            Discover: &pound;2,500 &middot; Explore: &pound;40,000 &middot; Exploit: &pound;15,000<br>
-                            June 2025 &ndash; Mar 2026<br>
-                            Lead: <em>Dr Zekun Guo</em> &middot; TTO: Snehal Kadam<br>
-                            <a target="_blank" href="https://iuk-business-connect.org.uk/opportunities/icure-explore/">Learn More</a>
+                            <b>IGNITE Network+ Flexible Fund</b> &middot; ~&pound;60,000<br>
+                            March 2025 &ndash; March 2026<br>
+                            Leads: <em>Dr Zekun Guo</em>, Dr Tongtong Zhang, Dr Yihuai Zhang<br>
+                            <a target="_blank" href="https://www.ignitenetplus.ac.uk/view/items/id/1529/funded_project-net-zero-emissions-aviation-developing-hydrogen-energy-infrastructure-at-airports">Learn More</a>
                         </p>
                     </div>
                 </div>
+
             </section>
 
             <!-- Talks -->
@@ -634,15 +636,15 @@
                 <h2 class="sec-title">Tech Talks &amp; Blogs</h2>
 
                 <div class="card">
-                    <img class="card-img" src="Talks/Human-in-the-Loop.png" alt="">
+                    <img class="card-img" src="Talks/LLM_Forecasting.png" alt="" width="20">
                     <div class="card-body">
-                        <h3>Bridging Minds and Machines: Agents with Human-in-the-Loop</h3>
+                        <h3>From Models to Agents: LLM-Driven Renewable Energy Systems</h3>
                         <p class="meta">
-                            Frontier Research, Real-World Impact, and Tomorrow's Possibilities<br>
-                            Xiaotian Jin, <b><em>Zekun Guo</em></b>, Puzhen Zhang, Shuo Lu, et al., 2025
+                            Integrating Forecasting, Optimisation and Control for Energy Systems<br>
+                            <b><em>Zekun Guo</em></b>, Best Presentation, 2026 @SuperAIRE ECR Workshop, Edinburgh
                         </p>
                         <div class="links" style="margin-top: 8px;">
-                            <a target="_blank" href="https://www.camel-ai.org/blogs/human-in-the-loop-ai-camel-integration">Blog</a>
+                            <a target="_blank" href="Talks/SuperAIRE_2026_ZekunGuo.pdf">Slides</a>
                         </div>
                     </div>
                 </div>
@@ -660,6 +662,21 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="card">
+                    <img class="card-img" src="Talks/Human-in-the-Loop.png" alt="">
+                    <div class="card-body">
+                        <h3>Bridging Minds and Machines: Agents with Human-in-the-Loop</h3>
+                        <p class="meta">
+                            Frontier Research, Real-World Impact, and Tomorrow's Possibilities<br>
+                            Xiaotian Jin, <b><em>Zekun Guo</em></b>, Puzhen Zhang, Shuo Lu, et al., 2025
+                        </p>
+                        <div class="links" style="margin-top: 8px;">
+                            <a target="_blank" href="https://www.camel-ai.org/blogs/human-in-the-loop-ai-camel-integration">Blog</a>
+                        </div>
+                    </div>
+                </div>
+
             </section>
 
             <!-- Teaching -->
