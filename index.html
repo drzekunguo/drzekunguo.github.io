@@ -263,15 +263,56 @@
         }
         .teach-module .module-desc { font-size: 12.5px; color: var(--text-secondary); line-height: 1.55; padding-left: 14px; }
 
-        /* ── Interest Tags ── */
-        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
-        .tag {
-            font-size: 12px; font-weight: 500; padding: 5px 14px;
-            border-radius: 100px; color: var(--accent);
-            background: var(--accent-soft); border: 1px solid var(--accent-medium);
+        /* ── Research Interests ── */
+        .research-intro {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 14px;
+        }
+        .research-intro p + p { margin-top: 10px; }
+
+        .research-label {
+            font-size: 13px;
+            color: var(--text-primary);
+            margin-bottom: 10px;
         }
 
-        .note { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+        .research-themes {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+        .research-themes li {
+            padding: 10px 14px;
+            font-size: 12.8px;
+            font-weight: 500;
+            color: var(--text-primary);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            transition: border-color 0.15s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .research-themes li:hover { border-color: var(--accent-medium); }
+        .research-themes li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .research-cta {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
 
         /* ── Cards (Projects / Talks) ── */
         .card {
@@ -403,6 +444,7 @@
             .card, .pub { flex-direction: column; }
             .card-img { width: 100%; aspect-ratio: 16/9; object-fit: contain; }
             .pub-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+            .research-themes { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -556,15 +598,26 @@
             <!-- Research Interests -->
             <section class="sec" id="research">
                 <h2 class="sec-title">Research Interests</h2>
-                <div class="tags">
-                    <span class="tag">Transportation Electrification</span>
-                    <span class="tag">Power System Stability &amp; Resilience</span>
-                    <span class="tag">AI in Electrical Engineering</span>
-                    <span class="tag">AI-Driven Offshore Renewable Energy</span>
-                    <span class="tag">LLM Multi-Agent Systems</span>
+
+                <div class="research-intro">
+                    <p>My research develops <strong>Agentic Engineering Science</strong>: autonomous scientific agents for engineering discovery, modelling, optimisation, planning and control.</p>
+                    <p>I am particularly interested in trustworthy AI systems that combine large language model agents, optimisation, simulation, model predictive control, reinforcement learning and human-in-the-loop decision support for complex engineering infrastructure.</p>
                 </div>
-                <p class="note">
-                    Interested in collaborating? Visit my <a target="_blank" href="https://docs.google.com/document/d/18h3DhsAO89oo1O2sl_iCglSX7B8yVn1LtnlQUcIVLM4/edit?usp=sharing">research topics</a> and reach out: <strong><em>"Hi, I am interested in [topic], let's collaborate!"</em></strong>
+
+                <p class="research-label"><strong>Core research themes:</strong></p>
+                <ul class="research-themes">
+                    <li>Agentic Engineering Science</li>
+                    <li>Autonomous scientific agents</li>
+                    <li>AI optimisation and control</li>
+                    <li>Trustworthy LLM multi-agent systems</li>
+                    <li>Engineering decision intelligence</li>
+                    <li>Energy infrastructure electrification and resilience</li>
+                    <li>Offshore renewables and hydrogen systems</li>
+                    <li>Power systems, microgrids and transport electrification</li>
+                </ul>
+
+                <p class="research-cta">
+                    Interested in collaborating? Visit my <a target="_blank" href="https://docs.google.com/document/d/18h3DhsAO89oo1O2sl_iCglSX7B8yVn1LtnlQUcIVLM4/edit?usp=sharing">research topics</a> or contact me with: <strong><em>"I am interested in [topic] and would like to explore a collaboration."</em></strong>
                 </p>
             </section>
 
@@ -713,7 +766,6 @@
                 </div>
 
                 <div class="card">
-                    <img class="card-img" src="Talks/LLM_Forecasting.png" alt="" width="20">
                     <div class="card-body">
                         <h3>From Models to Agents: LLM-Driven Renewable Energy Systems <span class="talk-badge talk-badge--award">🏆 AWARD WINNER</span></h3>
                         <p class="meta">
@@ -727,7 +779,6 @@
                 </div>
 
                 <div class="card">
-                    <img class="card-img" src="Talks/Agentic.png" alt="">
                     <div class="card-body">
                         <h3>Agentic AI Energy Management: LLM-Enhanced Decision-Making in Battery Energy Systems</h3>
                         <p class="meta">
@@ -741,7 +792,6 @@
                 </div>
 
                 <div class="card">
-                    <img class="card-img" src="Talks/Human-in-the-Loop.png" alt="">
                     <div class="card-body">
                         <h3>Bridging Minds and Machines: Agents with Human-in-the-Loop</h3>
                         <p class="meta">
