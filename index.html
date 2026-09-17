@@ -206,7 +206,7 @@
             display: grid; place-items: center; overflow: hidden; z-index: 1;
         }
         .tl-logo img { width: 100%; height: 100%; object-fit: cover; }
-        .tl-logo img[src$=".png"] { background: #fff; }
+        .tl-logo img.on-white { background: #fff; }
 
         .tl-item h3 { font-size: 14px; font-weight: 600; line-height: 1.3; margin-bottom: 2px; }
         .tl-item .tl-org { font-size: 13px; color: var(--accent); font-weight: 500; }
@@ -320,7 +320,7 @@
         [data-theme="dark"] .card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.2); }
 
         .card-img {
-            width: 180px; flex-shrink: 0; border-radius: var(--radius-sm);
+            width: 180px; height: auto; flex-shrink: 0; border-radius: var(--radius-sm);
             object-fit: contain; aspect-ratio: 4/3; background: #ffffff;
         }
 
@@ -379,7 +379,7 @@
         [data-theme="dark"] .pub:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.2); }
 
         .pub-img {
-            width: 140px; flex-shrink: 0; border-radius: var(--radius-sm);
+            width: 140px; height: auto; flex-shrink: 0; border-radius: var(--radius-sm);
             object-fit: contain; background: var(--bg-secondary);
         }
 
@@ -467,7 +467,7 @@
     <div class="wrap">
         <!-- Sidebar -->
         <aside class="side">
-            <img class="avatar" src="imgs/New-Square.jpg" alt="Zekun Guo">
+            <img class="avatar" src="imgs/New-Square.webp" width="320" height="320" decoding="async" fetchpriority="high" alt="Zekun Guo">
             <h1>Zekun Guo</h1>
             <p class="role">Agentic AI for Engineering Science</p>
             <p class="org">University of Hull</p>
@@ -505,7 +505,7 @@
                 <div class="timeline">
                     <!-- University of Hull -->
                     <div class="tl-item">
-                        <div class="tl-logo"><img src="imgs/icons/UoH.png" alt="Hull"></div>
+                        <div class="tl-logo"><img class="on-white" src="imgs/icons/UoH.webp" width="103" height="120" decoding="async" loading="lazy" alt="Hull"></div>
                         <h3>University of Hull</h3>
                         <p class="tl-meta">Nov 2023 &ndash; Present</p>
 
@@ -515,7 +515,7 @@
                                 <p class="tl-meta">Part-time &middot; Aug 2026 &ndash; Present</p>
                                 <p class="tl-detail">Lead research strategy for the Centre of Excellence for Data Science, Artificial Intelligence, and Modelling (DAIM), fostering interdisciplinary collaboration across AI, engineering, mathematics, medical and physical sciences, while strengthening industrial partnerships, commercialisation pathways, and knowledge exchange for staff and postgraduate researchers.</p>
                                 <div class="tl-affiliation">
-                                    <img src="imgs/icons/DAIM Building.jpeg" alt="DAIM">
+                                    <img src="imgs/icons/DAIM Building.webp" width="160" height="90" decoding="async" loading="lazy" alt="DAIM">
                                     <div class="aff-info">
                                         <p class="aff-name"><a target="_blank" href="https://www.hull.ac.uk/research/centres/centre-of-excellence-for-data-science-artificial-intelligence-and-modelling">DAIM Centre</a></p>
                                         <p class="aff-desc">Data Science, Artificial Intelligence and Modelling Centre &middot; <a target="_blank" href="https://daimcentre.github.io">daimcentre.github.io</a></p>
@@ -537,7 +537,7 @@
 
                     <!-- Energentic AI -->
                     <div class="tl-item">
-                        <div class="tl-logo"><img src="imgs/icons/Energentic.png" alt="Energentic"></div>
+                        <div class="tl-logo"><img class="on-white" src="imgs/icons/Energentic.webp" width="120" height="120" decoding="async" loading="lazy" alt="Energentic"></div>
                         <h3>Founder &amp; Entrepreneurial Lead</h3>
                         <p class="tl-org">Energentic AI</p>
                         <p class="tl-meta">2024 &ndash; Present</p>
@@ -549,7 +549,7 @@
 
                     <!-- University of Birmingham -->
                     <div class="tl-item">
-                        <div class="tl-logo"><img src="imgs/icons/university_of_birmingham_logo.jpg" alt="Birmingham"></div>
+                        <div class="tl-logo"><img src="imgs/icons/university_of_birmingham_logo.webp" width="120" height="120" decoding="async" loading="lazy" alt="Birmingham"></div>
                         <h3>Seconded Researcher</h3>
                         <p class="tl-org">University of Birmingham</p>
                         <p class="tl-meta">2025</p>
@@ -563,7 +563,7 @@
                 <h2 class="sec-title">Education</h2>
                 <div class="edu-list">
                     <div class="edu-item">
-                        <div class="edu-logo"><img src="imgs/icons/Brunel.jpg" alt="Brunel"></div>
+                        <div class="edu-logo"><img src="imgs/icons/Brunel.webp" width="120" height="120" decoding="async" loading="lazy" alt="Brunel"></div>
                         <div class="edu-info">
                             <h3>Brunel University of London</h3>
                             <p class="degree">PhD in Electronics and Electrical Engineering</p>
@@ -571,7 +571,7 @@
                         </div>
                     </div>
                     <div class="edu-item">
-                        <div class="edu-logo"><img src="imgs/icons/Edinburgh.jpg" alt="Edinburgh"></div>
+                        <div class="edu-logo"><img src="imgs/icons/Edinburgh.webp" width="120" height="120" decoding="async" loading="lazy" alt="Edinburgh"></div>
                         <div class="edu-info">
                             <h3>The University of Edinburgh</h3>
                             <p class="degree">MRes in Energy Systems</p>
@@ -579,7 +579,7 @@
                         </div>
                     </div>
                     <div class="edu-item">
-                        <div class="edu-logo"><img src="imgs/icons/Shandong University.jpg" alt="SDU"></div>
+                        <div class="edu-logo"><img src="imgs/icons/Shandong University.webp" width="120" height="120" decoding="async" loading="lazy" alt="SDU"></div>
                         <div class="edu-info">
                             <h3>Shandong University</h3>
                             <p class="degree">BEng in Energy and Environmental System Engineering</p>
@@ -687,7 +687,7 @@
                 <h2 class="sec-title">Funded Projects</h2>
 
                 <div class="card">
-                    <img class="card-img" src="imgs/ICURe.png" alt="">
+                    <img class="card-img" src="imgs/ICURe.webp" width="800" height="601" decoding="async" loading="lazy" alt="">
                     <div class="card-body">
                         <h3>Energentic: AI-Driven Agentic Energy Management for Battery Storage Systems</h3>
                         <p class="meta">
@@ -701,7 +701,7 @@
                 </div>
 
                 <div class="card">
-                    <img class="card-img" src="imgs/HIACT.png" alt="">
+                    <img class="card-img" src="imgs/HIACT.webp" width="800" height="506" decoding="async" loading="lazy" alt="">
                     <div class="card-body">
                         <h3>Modelling Hydrogen and Electric Demand at Airports for UK Decarbonised Aviation</h3>
                         <p class="meta">
@@ -714,7 +714,7 @@
                 </div>
 
                 <div class="card">
-                    <img class="card-img" src="imgs/IGNITE.jpg" alt="">
+                    <img class="card-img" src="imgs/IGNITE.webp" width="800" height="600" decoding="async" loading="lazy" alt="">
                     <div class="card-body">
                         <h3>Net-Zero Emissions Aviation: Developing Hydrogen Energy Infrastructure at Airports</h3>
                         <p class="meta">
