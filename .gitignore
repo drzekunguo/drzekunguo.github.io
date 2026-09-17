@@ -1,0 +1,13 @@
+# gstack local tooling state (browse console/network logs)
+.gstack/
+
+# npm (package.json declares live-server for `npm run dev`)
+node_modules/
+npm-debug.log*
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
