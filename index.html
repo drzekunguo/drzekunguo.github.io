@@ -123,8 +123,9 @@
             margin-bottom: 20px;
         }
 
-        .side h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 4px; }
-        .side .role { font-size: 12.5px; font-weight: 500; color: var(--accent); margin-bottom: 2px; }
+        .side h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 6px; }
+        .side .role { font-size: 12.5px; font-weight: 500; line-height: 1.5; color: var(--accent); margin-bottom: 10px; }
+        .side .tagline { font-size: 12px; line-height: 1.55; color: var(--text-secondary); margin-bottom: 10px; }
         .side .org { font-size: 12.5px; color: var(--text-tertiary); margin-bottom: 16px; }
         .side .email { font-size: 12px; color: var(--text-tertiary); margin-bottom: 20px; }
 
@@ -179,7 +180,7 @@
             transition: border-color 0.2s;
         }
         .edu-logo img { width: 100%; height: 100%; object-fit: cover; }
-        .edu-logo img[src$=".png"] { background: #fff; }
+        .edu-logo img.on-white { background: #fff; }
         .edu-item:hover .edu-logo { border-color: var(--accent-medium); }
 
         .edu-info { flex: 1; }
@@ -451,6 +452,7 @@
         <div class="nav-right">
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about">About</a></li>
+                <li><a href="#vision">Vision</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#publications">Publications</a></li>
@@ -469,7 +471,8 @@
         <aside class="side">
             <img class="avatar" src="imgs/New-Square.webp" width="320" height="320" decoding="async" fetchpriority="high" alt="Zekun Guo">
             <h1>Zekun Guo</h1>
-            <p class="role">Agentic AI for Engineering Science</p>
+            <p class="role">Lecturer in AI and Data Science<br>Research Lead, DAIM Centre</p>
+            <p class="tagline">Building Agentic AI for Engineering Discovery, Decision Intelligence and Scientific Automation</p>
             <p class="org">University of Hull</p>
             <p class="email">Z.Guo2@hull.ac.uk</p>
 
@@ -491,11 +494,19 @@
                 <div class="bio">
                     <p><strong>Research Lead (DAIM, University of Hull) &middot; AI for Engineering Science &middot; Founder of Energentic AI &middot; RAEng Global Talent Awardee</strong></p>
                     <p>I am a Lecturer and Research Lead at the Centre of Excellence for Data Science, Artificial Intelligence and Modelling (DAIM), <a target="_blank" href="https://www.hull.ac.uk/staff-directory/zekun-guo">University of Hull</a> (GitHub page: <a target="_blank" href="https://daimcentre.github.io">daimcentre.github.io</a>), where I lead research strategy and interdisciplinary initiatives in AI for Engineering.</p>
-                    <p>My research focuses on <strong>Agentic AI for Engineering Science</strong>—developing intelligent systems that accelerate modelling, simulation, optimisation and decision-making for complex engineering systems. My work spans energy systems, infrastructure, digital twins and the emerging field of AI for Science.</p>
                     <p>Beyond research, I am passionate about building research capability. I enjoy connecting frontier AI with real-world engineering challenges, helping researchers develop ambitious ideas, competitive funding proposals and impactful collaborations across academia and industry.</p>
                     <p>I lead the <strong><a target="_blank" href="https://www.hull.ac.uk/study/postgraduate/taught/artificial-intelligence-for-engineering-msc">MSc AI for Engineering</a></strong> programme and designed its flagship module, <strong>AI-Driven Optimisation and Control</strong>, bringing reinforcement learning, agentic AI and modern AI methods into engineering education.</p>
                     <p>I am also the founder of <strong><a target="_blank" href="https://www.energentic.ai">Energentic AI</a></strong>, an AI service translating research into modular Agent-as-a-Service solutions for engineering decision intelligence, with applications in forecasting, optimisation and operational support.</p>
                     <p>I actively welcome collaborations with researchers, industry, start-ups and public-sector organisations interested in <strong>AI for Engineering, AI for Science, intelligent infrastructure, digital twins, optimisation, autonomous systems and research commercialisation</strong>.</p>
+                </div>
+            </section>
+
+            <!-- Research Vision -->
+            <section class="sec" id="vision">
+                <h2 class="sec-title">Research Vision</h2>
+                <div class="bio">
+                    <p>AI is transforming how scientific knowledge is created. My long-term goal is to build <strong>Agentic Engineering Science</strong>: autonomous systems capable of conducting engineering analysis, design, optimisation and decision-making collaboratively with humans.</p>
+                    <p>Through foundation models, multi-agent systems and engineering simulation, I aim to develop <strong>AI researchers</strong> and <strong>AI engineers</strong> that accelerate innovation in energy, manufacturing and critical infrastructure.</p>
                 </div>
             </section>
 
@@ -567,7 +578,7 @@
                         <div class="edu-info">
                             <h3>Brunel University of London</h3>
                             <p class="degree">PhD in Electronics and Electrical Engineering</p>
-                            <p class="period">2019 &ndash; 2023</p>
+                            <p class="period">2023</p>
                         </div>
                     </div>
                     <div class="edu-item">
