@@ -11,3 +11,6 @@ Thumbs.db
 *.swp
 .vscode/
 .idea/
+
+# Source artwork kept locally; imgs/icons/Cranfield.webp is what the page ships
+imgs/cranfield.png
